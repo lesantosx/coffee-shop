@@ -1,75 +1,79 @@
-[
-  {
-    "id": 1,
-    "name": "Americano",
-    "type": "coffee",
-    "description": "A single shot of espresso added to a cup of hot water.",
-    "price": 3.00,
-    "image": "/images/coffee/coffee-6.png"
-  },
-  {
-    "id": 2,
-    "name": "Espresso",
-    "type": "coffee",
-    "description": "Strong concentration of black coffe made in an espresso machine by forcing steam through pressurized coffee beans. This drink contains no milk.",
-    "price": 3.00,
-    "image": "/images/coffee/coffee-3.png"
-  },
-  {
-    "id": 3,
-    "name": "Cappuccino",
-    "type": "coffee",
-    "description": "Three equal parts of steamed milk, foamed milk, and espresso. You can add flavoring syrups to make vanilla, caramel, ou hazelnut cappuccinos.",
-    "price": 5.00,
-    "image": "/images/coffee/coffee-4.png"
-  },
-  {
-    "id": 4,
-    "name": "Cafe Latte",
-    "type": "coffee",
-    "description": "One part espresso with three parts steamed milk with froth on top.",
-    "price": 4.00,
-    "image": "/images/coffee/coffee-5.png"
-  },
-  {
-    "id": 5,
-    "name": "Macchiato",
-    "type": "coffee",
-    "description": "Espresso with a dollop os steamed milk added in a 4:1 ratio.",
-    "price": 4.50,
-    "image": "/images/coffee/coffee-1.png"
-  },
-  {
-    "id": 6,
-    "name": "Iced coffee",
-    "type": "coffee",
-    "description": "Brewed coffee served over ice with sugar and milk.",
-    "price": 6.00,
-    "image": "/images/coffee/coffee-2.png"
-  },
-  {
-    "id": 7,
-    "name": "Ice Latte",
-    "type": "ice",
-    "description": "An iced latte is a chilled coffee beverage that's made by mixing espresso with chilled milk, simple syrup, and ice cubes.",
-    "price": 18,
-    "image": "/images/ice-drink/ice-2.png"
-  },
-  {
-    "id": 8,
-    "name": "Ice Americano",
-    "type": "ice",
-    "description": "An Iced Americano is an Americano served over ice: espresso, cold water (optional), and ice. ",
-    "price": 15,
-    "image": "/images/ice-drink/ice-3.png"
-  },
-  {
-    "id": 9,
-    "name": "Ice Mocha",
-    "type": "ice",
-    "description": "An iced mocha typically combines cold brew with milk and chocolate flavoring.",
-    "price": 17,
-    "image": "/images/ice-drink/ice-1.png"
-  }  
-]
-
+{
+  "coffees": 
+  [
+      {
+      "id": 1,
+      "name": "Americano",
+      "type": "coffee",
+      "description": "A single shot of espresso added to a cup of hot water.",
+      "price": 3.00,
+      "image": "/images/coffee/coffee-6.png"
+    },
+    {
+      "id": 2,
+      "name": "Espresso",
+      "type": "coffee",
+      "description": "Strong concentration of black coffe made in an espresso machine by forcing steam through pressurized coffee beans. This drink contains no milk.",
+      "price": 3.00,
+      "image": "/images/coffee/coffee-3.png"
+    },
+    {
+      "id": 3,
+      "name": "Cappuccino",
+      "type": "coffee",
+      "description": "Three equal parts of steamed milk, foamed milk, and espresso. You can add flavoring syrups to make vanilla, caramel, ou hazelnut cappuccinos.",
+      "price": 5.00,
+      "image": "/images/coffee/coffee-4.png"
+    },
+    {
+      "id": 4,
+      "name": "Cafe Latte",
+      "type": "coffee",
+      "description": "One part espresso with three parts steamed milk with froth on top.",
+      "price": 4.00,
+      "image": "/images/coffee/coffee-5.png"
+    },
+    {
+      "id": 5,
+      "name": "Macchiato",
+      "type": "coffee",
+      "description": "Espresso with a dollop os steamed milk added in a 4:1 ratio.",
+      "price": 4.50,
+      "image": "/images/coffee/coffee-1.png"
+    },
+    {
+      "id": 6,
+      "name": "Iced coffee",
+      "type": "coffee",
+      "description": "Brewed coffee served over ice with sugar and milk.",
+      "price": 6.00,
+      "image": "/images/coffee/coffee-2.png"
+    }  
+  ],
+  "drinks": [    
+    {
+      "id": 7,
+      "name": "Ice Latte",
+      "type": "ice",
+      "description": "An iced latte is a chilled coffee beverage that's made by mixing espresso with chilled milk, simple syrup, and ice cubes.",
+      "price": 18,
+      "image": "/images/ice-drink/ice-2.png"
+    },
+    {
+      "id": 8,
+      "name": "Ice Americano",
+      "type": "ice",
+      "description": "An Iced Americano is an Americano served over ice: espresso, cold water (optional), and ice. ",
+      "price": 15,
+      "image": "/images/ice-drink/ice-3.png"
+    },
+    {
+      "id": 9,
+      "name": "Ice Mocha",
+      "type": "ice",
+      "description": "An iced mocha typically combines cold brew with milk and chocolate flavoring.",
+      "price": 17,
+      "image": "/images/ice-drink/ice-1.png"
+    }
+  ] 
+}

@@ -9,10 +9,29 @@
       </span>
     </div>
 
-    <div class="coffees">  
-      <span v-for="item in items" :key="item.id">
-        <CoffeeCard :item="item"/>
-      </span>          
+    <div class="coffees">
+      <Carousel v-bind="settings" :breakpoints="breakpoints">
+        <Slide v-for="coffee in coffees" :key="coffee">
+          <div class="carousel__item">
+            <CoffeeCard :item="coffee"/>
+          </div>
+        </Slide>
+
+        <template #addons>
+          <Pagination /> 
+          <Navigation />
+        </template>
+      </Carousel>
+    </div>  
+
+    <div class="header d-flex drinks-section">
+      <span class="text-header">Our <span class="text-custom">Drinks</span></span>
+    </div>
+
+    <div class="drinks">
+      <template v-for="drink in drinks" :key="drink">
+        <IceDrinkCard :item="drink" />
+      </template>      
     </div>
   </section>
 </template>
@@ -20,16 +39,47 @@
 <script>
 
 import CoffeeCard from './CoffeeCard.vue'
+import IceDrinkCard from './IceDrinkCard.vue'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
 
 export default {
   props: {
-    items: {
+    coffees: {
+      required: true
+    },
+    drinks: {
       required: true
     }
   },
   components: {
-    CoffeeCard
+    CoffeeCard,
+    IceDrinkCard,
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation
   },
+  data() {
+    return {
+      settings: {
+        itemsToShow: 3,
+        snapAlign: 'center',
+      },
+      breakpoints: {
+        // 700px and up
+        700: {
+          itemsToShow: 2,
+          snapAlign: 'center',
+        },
+        // 1024 and up
+        1024: {
+          itemsToShow: 3,
+          snapAlign: 'start',
+        },
+      },
+    }
+  }
 }
 
 </script>
@@ -66,8 +116,16 @@ export default {
 
   .coffees {
     margin-top: 100px;
+  }
+
+  .drinks-section {
+    margin-top: 100px;
+  }
+
+  .drinks {
     display: grid;
     grid-template-columns: auto auto auto;
+    margin-top: 100px;
   }
 }
 

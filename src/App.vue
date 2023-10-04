@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Menu :items="items"/>
+    <Menu :coffees="coffees" :drinks="iceDrinks" />
   </div>  
 </template>
 
@@ -19,14 +19,13 @@ export default {
   },
   data() {
     return {
-      items: [],
       coffees: [],
       iceDrinks: []
     }
   }, 
   created() {   
-    this.items = api
-    
+    this.coffees = api.coffees   
+    this.iceDrinks = api.drinks 
   }
 }
 </script>
@@ -36,7 +35,7 @@ export default {
 
 #app {
   background-color: $background-primary;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;

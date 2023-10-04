@@ -1,7 +1,7 @@
 <template>
-  <div class="coffee-card">
+  <div class="drink-card">
     <div>
-      <img :src="item.image" alt="" class="image-coffee"/>      
+      <img :src="item.image" alt="" class="image-drink"/>      
     </div>
     <div class="details">
       <div class="details-header">
@@ -9,14 +9,12 @@
         <span>${{ item.price }}</span>
       </div>
       <span class="description">{{ item.description }}</span>
-      <div class="actions-btn">
-        <button type="button" class="card-btn">Shop now</button>
-        <button type="button" class="card-btn">
+      <div class="actions-btn" >   
+        <button type="button" class="cart-btn" v-show="false">
           <span class="material-symbols-outlined cart-icon">add_shopping_cart</span>
           Add cart
-        </button>
+        </button>    
       </div>
-
     </div>
   </div>
 </template>
@@ -38,16 +36,28 @@ export default {
 <style lang="scss" scoped>
 @import './../sass/tokens';
 
-.coffee-card {
+.drink-card {
   width: 355px;
-  height: 421px;
+  height: 480px;
   background-color: #FFFFFF;
   border-radius: 10px;
   margin-bottom: 10px;
   text-align: center;
+  transition: width 0.2s, height 0.5s;
 }
 
-.image-coffee {
+.drink-card:hover {
+  background-color: $secondary-color;
+  opacity: 0.8;
+  width: 378px;
+  height: 532px;
+  
+  .description { 
+    color: $gray-900;
+  }
+}
+
+.image-drink {
   width: 200px;
   cursor: pointer;
 }
@@ -61,6 +71,7 @@ export default {
   justify-content: space-between;
   font-weight: 700;
   margin-bottom: 15px;
+  color: #000000;
 }
 
 .description {
@@ -71,27 +82,14 @@ export default {
   font-weight: 600;
 }
 
-.actions-btn {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  bottom: 0;
-  position: relative;
-}
-
-.card-btn {
-  background-color: $secondary-color;
+.cart-btn {
+  width: 321px;
   height: 42px;
-  width: 140px;
+  background-color: #FFFFFF;
+  color: #240000;
   border: none;
   border-radius: 10px;
-  color: white;
-  font-size: 16px;
-}
-
-.card-btn:hover {
-  opacity: 0.9;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .cart-icon {
