@@ -9,7 +9,9 @@
         <button type="button" class="btn btn-link nav-btn">Coffee Menu</button>
         <button type="button" class="btn btn-link nav-btn">About us</button>     
       </div>
-      <div></div>
+      <div class="cart-icon"> 
+        <span class="material-symbols-outlined">shopping_cart</span>
+      </div>
     </div>
     
     <div class="banner">
@@ -58,6 +60,7 @@
     color: $primary-color;
     font-weight: 700;
     text-decoration: none;
+    transition: transform .2s ease;
   }
 
   .nav-btn:hover {
@@ -70,8 +73,8 @@
   }
 
   .banner {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    justify-content: space-between;
     margin-top: 180px;
   }
 
@@ -85,7 +88,7 @@
 
     button {
       border-radius: 2rem;
-      width: 250px;
+      width: 280px;
       height: 72px;
       background-color: $primary-color;
       color: white;
@@ -111,6 +114,31 @@
 
     img:hover {
       transform: scale(1.2);
+    }
+  }
+
+  .cart-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+
+    span {
+      color: $primary-color;
+      padding: 5px;
+      vertical-align: middle;
+      transition: transform .2s ease;
+    }
+
+    span:hover {
+      transform: translateY(0) scale(1.2);
     }
   }
 
