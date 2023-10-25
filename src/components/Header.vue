@@ -20,7 +20,10 @@
         <div class="banner-title">
           Have a cup of coffee
         </div>
-        <button type="button" class="view-btn">View Menu</button>
+        <div class="banner-btns d-flex">
+          <button type="button" class="view-btn">View Menu</button>
+          <button type="button" class="about-btn">About Us</button>
+        </div>        
         <div class="icones">
           <img src="./../assets/icon-1.png" />
           <img src="./../assets/icon-2.png" />
@@ -77,20 +80,25 @@
     font-size: 52px;
   }
 
-  .view-btn {
-    width: 469px;
-    height: 78px;
-    background-color: $primary-color;
-    color: white;
-    font-weight: 700;
-    font-size: 24px;
-    border-radius: 40px;
-    margin-top: 20px;
-    transition: 0.3s;
-  }
+  .banner-btns {
+    gap: 2.5rem;
 
-  .view-btn:hover {
-    opacity: 0.8;
+    button {
+      border-radius: 2rem;
+      width: 250px;
+      height: 72px;
+      background-color: $primary-color;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.86;
+    }
+  
   }
 
   .icones {
@@ -98,6 +106,11 @@
     img {
       padding-right: 25px;
       cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.2);
     }
   }
 

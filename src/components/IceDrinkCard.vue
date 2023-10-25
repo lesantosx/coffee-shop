@@ -1,5 +1,9 @@
 <template>
-  <div class="drink-card">
+  <div 
+    class="drink-card" 
+    v-on:mouseover="mouseover"
+    v-on:mouseleave="mouseleave"
+  >
     <div>
       <img :src="item.image" alt="" class="image-drink"/>      
     </div>
@@ -9,8 +13,8 @@
         <span>${{ item.price }}</span>
       </div>
       <span class="description">{{ item.description }}</span>
-      <div class="actions-btn" >   
-        <button type="button" class="cart-btn" v-show="false">
+      <div class="actions-btn">   
+        <button type="button" class="cart-btn" v-if="showBtn == true">
           <span class="material-symbols-outlined cart-icon">add_shopping_cart</span>
           Add cart
         </button>    
@@ -27,8 +31,21 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      showBtn: false
+    }
+  },
   components: {},
-  created() {}
+  created() {},
+  methods: {
+    mouseover() {
+      this.showBtn = true
+    },    
+    mouseleave() {
+      this.showBtn = false
+    }
+  }
 }
 
 </script>
@@ -43,7 +60,12 @@ export default {
   border-radius: 10px;
   margin-bottom: 10px;
   text-align: center;
-  transition: width 0.2s, height 0.5s;
+  transition: width 0.2s, height 0.5s ease;
+  cursor: pointer;
+
+  img {
+    transition: transform .5s ease;
+  }
 }
 
 .drink-card:hover {
@@ -52,14 +74,17 @@ export default {
   width: 378px;
   height: 532px;
   
+  img {
+    transform: translateY(0) scale(1.2);
+  }
+
   .description { 
-    color: $gray-900;
+    color: #e6e6e6;
   }
 }
 
 .image-drink {
-  width: 200px;
-  cursor: pointer;
+  width: 200px;  
 }
 
 .details {
@@ -90,6 +115,12 @@ export default {
   border: none;
   border-radius: 10px;
   font-weight: 600;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #ebebeb;
 }
 
 .cart-icon {

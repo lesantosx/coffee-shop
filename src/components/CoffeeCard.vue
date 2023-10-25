@@ -10,10 +10,9 @@
       </div>
       <span class="description">{{ item.description }}</span>
       <div class="actions-btn">
-        <button type="button" class="card-btn">Shop now</button>
+        <div class="type-card" :class="item.type">{{ item.type }}</div>
         <button type="button" class="card-btn">
           <span class="material-symbols-outlined cart-icon">add_shopping_cart</span>
-          Add cart
         </button>
       </div>
 
@@ -50,6 +49,11 @@ export default {
 .image-coffee {
   width: 200px;
   cursor: pointer;
+  transition: transform .3s ease;
+}
+
+.image-coffee:hover {
+  transform: translateY(0) scale(1.2);
 }
 
 .details {
@@ -81,10 +85,10 @@ export default {
 
 .card-btn {
   background-color: $secondary-color;
-  height: 42px;
-  width: 140px;
+  height: 48px;
+  width: 48px;
   border: none;
-  border-radius: 10px;
+  border-radius: 100%;
   color: white;
   font-size: 16px;
 }
@@ -95,8 +99,27 @@ export default {
 }
 
 .cart-icon {
-  font-size: 16px;
-  vertical-align: auto;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.type-card {
+  border-radius: 5px;
+  width: 78px;
+  height: 31px;
+  font-weight: 700;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.ice {
+  border: 2px $ice-type solid;
+  color: $ice-type;
+}
+
+.hot {
+  border: 2px $hot-type solid;
+  color: $hot-type;
 }
 
 </style>

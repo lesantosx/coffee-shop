@@ -4,7 +4,7 @@
       {
       "id": 1,
       "name": "Americano",
-      "type": "coffee",
+      "type": "hot",
       "description": "A single shot of espresso added to a cup of hot water.",
       "price": 3.00,
       "image": "/images/coffee/coffee-6.png"
@@ -12,7 +12,7 @@
     {
       "id": 2,
       "name": "Espresso",
-      "type": "coffee",
+      "type": "hot",
       "description": "Strong concentration of black coffe made in an espresso machine by forcing steam through pressurized coffee beans. This drink contains no milk.",
       "price": 3.00,
       "image": "/images/coffee/coffee-3.png"
@@ -20,7 +20,7 @@
     {
       "id": 3,
       "name": "Cappuccino",
-      "type": "coffee",
+      "type": "hot",
       "description": "Three equal parts of steamed milk, foamed milk, and espresso. You can add flavoring syrups to make vanilla, caramel, ou hazelnut cappuccinos.",
       "price": 5.00,
       "image": "/images/coffee/coffee-4.png"
@@ -28,7 +28,7 @@
     {
       "id": 4,
       "name": "Cafe Latte",
-      "type": "coffee",
+      "type": "hot",
       "description": "One part espresso with three parts steamed milk with froth on top.",
       "price": 4.00,
       "image": "/images/coffee/coffee-5.png"
@@ -36,7 +36,7 @@
     {
       "id": 5,
       "name": "Macchiato",
-      "type": "coffee",
+      "type": "ice",
       "description": "Espresso with a dollop os steamed milk added in a 4:1 ratio.",
       "price": 4.50,
       "image": "/images/coffee/coffee-1.png"
@@ -44,7 +44,7 @@
     {
       "id": 6,
       "name": "Iced coffee",
-      "type": "coffee",
+      "type": "ice",
       "description": "Brewed coffee served over ice with sugar and milk.",
       "price": 6.00,
       "image": "/images/coffee/coffee-2.png"

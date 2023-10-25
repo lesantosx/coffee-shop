@@ -3,26 +3,27 @@
     <div class="header d-flex">
       <span class="text-header">Our <span class="text-custom">Coffees</span></span>
       <span class="filters">
-        <span class="text-default">All Coffee</span>
-        <span class="text-default">Hot Coffee</span>
-        <span class="text-default">Ice Coffee</span>
+        <template v-for="filter in filters" :key="filter">
+          <span 
+            class="text-default"           
+            :class="filter.active ? 'text-hover' : ''"
+            @click="filterCoffee(filter.id)"
+          >
+          {{ filter.text }}
+        </span>
+        </template>        
       </span>
     </div>
 
     <div class="coffees">
-      <Carousel v-bind="settings" :breakpoints="breakpoints">
-        <Slide v-for="coffee in coffees" :key="coffee">
-          <div class="carousel__item">
-            <CoffeeCard :item="coffee"/>
-          </div>
-        </Slide>
-
-        <template #addons>
-          <Pagination /> 
-          <Navigation />
-        </template>
-      </Carousel>
+      <template v-for="coffee in coffees" :key="coffee">
+        <CoffeeCard :item="coffee" />
+      </template>     
     </div>  
+
+    <div class="text-center mt-4">
+      <span class="see-more">See more</span>
+    </div>
 
     <div class="header d-flex drinks-section">
       <span class="text-header">Our <span class="text-custom">Drinks</span></span>
@@ -40,8 +41,6 @@
 
 import CoffeeCard from './CoffeeCard.vue'
 import IceDrinkCard from './IceDrinkCard.vue'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-import 'vue3-carousel/dist/carousel.css'
 
 export default {
   props: {
@@ -55,29 +54,25 @@ export default {
   components: {
     CoffeeCard,
     IceDrinkCard,
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation
   },
   data() {
     return {
-      settings: {
-        itemsToShow: 3,
-        snapAlign: 'center',
-      },
-      breakpoints: {
-        // 700px and up
-        700: {
-          itemsToShow: 2,
-          snapAlign: 'center',
-        },
-        // 1024 and up
-        1024: {
-          itemsToShow: 3,
-          snapAlign: 'start',
-        },
-      },
+      filters: [
+        {id: 1, text: 'All Coffee', active: true},
+        {id: 2, text: 'Hot Coffee', active: false},
+        {id: 3, text: 'Ice Coffee', active: false}
+      ]
+    }
+  },
+  methods: {
+    filterCoffee(id){
+      this.filters.forEach((filter) => {
+        if(filter.id === id) {
+          filter.active = true
+          return
+        }
+        filter.active = false
+      })
     }
   }
 }
@@ -112,10 +107,47 @@ export default {
       padding-right: 20px;
       cursor: pointer;
     }
+
+    .text-hover {
+      --c:linear-gradient(#AD6D2F 0 0);
+  
+      padding-bottom: .15em;
+      background: var(--c), var(--c);
+      background-size: .3em .1em;
+      background-position:50% 100%;
+      background-repeat: no-repeat;
+      transition: .3s linear, background-size .3s .2s linear;
+    }
+
+    .text-hover:hover {
+      background-size: 40% .1em;
+      background-position: 5% 100%, 60% 100%;
+    }
   }
 
   .coffees {
     margin-top: 100px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .see-more {
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    --c:linear-gradient(#AD6D2F 0 0);
+  
+    padding-bottom: .15em;
+    background: var(--c), var(--c);
+    background-size: .3em .1em;
+    background-position:50% 100%;
+    background-repeat: no-repeat;
+    transition: .3s linear, background-size .3s .2s linear;
+  }
+
+  .see-more:hover {
+    background-size: 40% .1em;
+    background-position: 10% 100%, 90% 100%;
   }
 
   .drinks-section {
